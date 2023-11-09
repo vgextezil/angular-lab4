@@ -1,0 +1,31 @@
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
+  flex-direction: column;
+  text-align: center;
+}
+.form-group{
+  margin: 3px;
+  flex-direction: column;
+  display: flex;
+}
+label{
+  margin: 1px;
+}
+input{
+  margin: 1px;
+}
+button{
+  margin: 2px;
+}
+.is-invalid-required{
+  border: red solid 1px;
+}
+.red-border{
+  border: solid 1px red;
+}
+
+input.ng-touched.ng-invalid {border:solid red 2px}
+input.ng-touched.ng-valid {border:solid green 2px}

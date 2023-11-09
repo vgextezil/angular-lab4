@@ -1,0 +1,41 @@
+<form [formGroup]="addUserForm" novalidate (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Id</label>
+    <label>{{users.length + 1}}</label>
+  </div>
+  <div class="form-group">
+    <label>First Name</label>
+    <input class="form-control" formControlName="firstName">
+    <span *ngIf="firstName?.touched">Hello</span>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input class="form-control" formControlName="lastName">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input class="form-control" formControlName="password">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input class="form-control" formControlName="confirmPassword">
+  </div>
+  <div class="form-group">
+    <label>Phone</label>
+    <input class="form-control" formControlName="phone">
+  </div>
+  <div formArrayName="subjects">
+    <div class="form-group" *ngFor="let subject of subjectsControls; let i = index">
+      <label>Subject</label>
+      <input class="form-control" formControlName="{{i}}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-secondary" type="button" (click)="addSubject()">Add Subject</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!addUserForm.valid">Add User</button>
+  </div>
+</form>
